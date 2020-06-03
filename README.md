@@ -1,4 +1,4 @@
-## VanillaJS Chrome App
+## Nomad Coder Vanilla Javascript Challenge
 [![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 [![Generic badge](https://img.shields.io/github/languages/top/alstn2468/VanillaJS_Chrome_App)](https://shields.io/)
 
