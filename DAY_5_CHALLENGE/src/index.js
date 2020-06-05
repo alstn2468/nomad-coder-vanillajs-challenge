@@ -68,7 +68,7 @@ function createElement() {
     const dateObj = createDateObject(now);
     const nowDateElement = createNowDateData(dateObj);
     const dayDiff = calculateDiff(getTime(now));
-    const dayDiffElement = createDiffDateDatae(dayDiff);
+    const dayDiffElement = createDiffDateData(dayDiff);
 
     return { nowDateElement, dayDiffElement };
 }
