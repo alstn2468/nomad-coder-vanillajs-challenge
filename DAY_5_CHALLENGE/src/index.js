@@ -56,8 +56,15 @@ function createDiffDateDate(date) {
     );
 }
 
-function createElement() {
+function utcTimeToKstTime() {
     const now = new Date();
+    const utc = now.getTime() + now.getTimezoneOffset() * 60000;
+
+    return new Date(utc + NINE_HOURS_MILLISECONDS);
+}
+
+function createElement() {
+    const now = utcTimeToKstTime();
     const dateObj = createDateObject(now);
     const nowDateElement = createNowDateData(dateObj);
     const dayDiff = calculateDiff(getTime(now));
@@ -78,7 +85,7 @@ function syncElement() {
 function init() {
     const { nowDateElement, dayDiffElement } = createElement();
     const body = document.querySelector("body");
-
+    utcTimeToKstTime();
     body.innerHTML = "<h1>Time Until Christmas</h1>";
     body.innerHTML += "<h2 id='now'>" + nowDateElement + "</h2>";
     body.innerHTML += "<h2 id='diff'>" + dayDiffElement + "</h2>";
