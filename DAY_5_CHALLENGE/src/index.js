@@ -85,7 +85,7 @@ function syncElement() {
 function init() {
     const { nowDateElement, dayDiffElement } = createElement();
     const body = document.querySelector("body");
-    utcTimeToKstTime();
+
     body.innerHTML = "<h1>Time Until Christmas</h1>";
     body.innerHTML += "<h2 id='now'>" + nowDateElement + "</h2>";
     body.innerHTML += "<h2 id='diff'>" + dayDiffElement + "</h2>";
