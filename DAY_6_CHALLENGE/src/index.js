@@ -5,11 +5,9 @@ import './styles.css';
 const country = localStorage.getItem('country');
 const select = document.querySelector('select');
 
-for (const option of select.options) {
-    if (option.value === country) {
-        option.selected = true;
-        break;
-    }
+if (country) {
+    const cachedOption = document.querySelector(`option[value=${country}]`);
+    cachedOption.selected = true;
 }
 
 select.addEventListener('change', (event) => {
