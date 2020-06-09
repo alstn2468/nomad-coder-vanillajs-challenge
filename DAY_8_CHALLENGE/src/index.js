@@ -36,7 +36,9 @@ function createTodoElement(item, isPending = true) {
 
     leftButton.addEventListener("click", () => {
         onClickRemoveButton(item.id, isPending ? "PENDING" : "FINISHED");
-        pendingList.removeChild(element);
+        isPending ? 
+            pendingList.removeChild(element)
+            : finishedList.removeChild(element);
     });
     rightButton.addEventListener("click", () => {
         onClickRemoveButton(item.id, isPending ? "PENDING" : "FINISHED");
