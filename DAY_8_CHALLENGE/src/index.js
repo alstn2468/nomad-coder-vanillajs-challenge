@@ -24,55 +24,29 @@ function onClickRemoveButton(id, name = "PENDING") {
     setLocalStorage(name);
 }
 
-function createPendingTodoElement(item) {
+function createTodoElement(item, isPending = true) {
     const element = document.createElement("li");
     const span = document.createElement("span");
-    const deleteButton = document.createElement("button");
-    const finishedButton = document.createElement("button");
+    const leftButton = document.createElement("button");
+    const rightButton = document.createElement("button");
 
-    deleteButton.innerText = "❌";
-    finishedButton.innerText = "✅";
+    leftButton.innerText = "❌";
+    rightButton.innerText = isPending ? "✅" : "🔙";
     span.innerText = item.text;
-    deleteButton.addEventListener("click", () => {
-        onClickRemoveButton(item.id);
+
+    leftButton.addEventListener("click", () => {
+        onClickRemoveButton(item.id, isPending ? "PENDING" : "FINISHED");
         pendingList.removeChild(element);
     });
-    finishedButton.addEventListener("click", () => {
-        onClickRemoveButton(item.id);
-        swapTask(element, "FINISHED");
+    rightButton.addEventListener("click", () => {
+        onClickRemoveButton(item.id, isPending ? "PENDING" : "FINISHED");
+        swapTask(element, isPending ? "FINISHED" : "PENDING");
     });
 
     element.id = item.id;
     element.appendChild(span);
-    element.appendChild(deleteButton);
-    element.appendChild(finishedButton);
-
-    return element;
-}
-
-function createFinishedTodoElement(item) {
-    const element = document.createElement("li");
-    const span = document.createElement("span");
-    const deleteButton = document.createElement("button");
-    const undoButton = document.createElement("button");
-
-    deleteButton.innerText = "❌";
-    undoButton.innerText = "🔙";
-    span.innerText = item.text;
-
-    deleteButton.addEventListener("click", () => {
-        onClickRemoveButton(item.id, "FINISHED");
-        finishedList.removeChild(element);
-    });
-    undoButton.addEventListener("click", () => {
-        onClickRemoveButton(item.id, "FINISHED");
-        swapTask(element, "PENDING");
-    });
-
-    element.id = item.id;
-    element.appendChild(span);
-    element.appendChild(deleteButton);
-    element.appendChild(undoButton);
+    element.appendChild(leftButton);
+    element.appendChild(rightButton);
 
     return element;
 }
@@ -83,7 +57,7 @@ function inputOnEnterKeyPress(event) {
 
         setLocalStorage("PENDING", newItem);
 
-        const todoElement = createPendingTodoElement(newItem);
+        const todoElement = createTodoElement(newItem);
         pendingList.appendChild(todoElement);
 
         todoInput.value = "";
@@ -101,11 +75,11 @@ function swapTask(parent, name) {
     if (name === "FINISHED") {
         pendingList.removeChild(parent);
 
-        finishedList.appendChild(createFinishedTodoElement(item));
+        finishedList.appendChild(createTodoElement(item, false));
     } else {
         finishedList.removeChild(parent);
 
-        pendingList.appendChild(createPendingTodoElement(item));
+        pendingList.appendChild(createTodoElement(item));
     }
 }
 
@@ -113,12 +87,12 @@ function init() {
     todoInput.addEventListener("keypress", inputOnEnterKeyPress);
 
     TODO_DATA["PENDING"].map((item) => {
-        const pendingElement = createPendingTodoElement(item);
+        const pendingElement = createTodoElement(item);
         pendingList.appendChild(pendingElement);
     });
 
     TODO_DATA["FINISHED"].map((item) => {
-        const finishedElement = createFinishedTodoElement(item);
+        const finishedElement = createTodoElement(item, false);
         finishedList.appendChild(finishedElement);
     });
 }
