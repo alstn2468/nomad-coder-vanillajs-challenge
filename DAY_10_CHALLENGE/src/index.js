@@ -43,7 +43,7 @@ function addGameResultText(isWin) {
 
 function onSubmitForm(event) {
     event.preventDefault();
-    const numberInputValue = parseInt(gameForm["number-input"].value);
+    const numberInputValue = parseInt(gameForm["number-input"].value, 10);
 
     if (!numberInputValue) {
         return alert("Please write any number.");
