@@ -5,11 +5,67 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    text-align: center;
     height: 100%;
     width: 100%;
+    background: linear-gradient(
+        45deg,
+        #3527c2,
+        #6dbbe8,
+        #ffc6c4,
+        #6de8dd,
+        #5dbcd2
+    );
+    background-size: 182% 200%;
+    color: #000000;
+    -webkit-animation: Gradient 7s ease infinite;
+    -moz-animation: Gradient 7s ease infinite;
+    animation: Gradient 7s ease infinite;
 }
 
-input[type="range"] {
+@-webkit-keyframes Gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@-moz-keyframes Gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes Gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+input[type='range'] {
     width: 350px;
     margin: 20px 0;
     -webkit-appearance: none;
@@ -21,11 +77,11 @@ input[type="range"] {
     border-radius: 0;
 }
 
-input[type="range"]:focus {
+input[type='range']:focus {
     outline: none;
 }
 
-input[type="range"]::-webkit-slider-thumb {
+input[type='range']::-webkit-slider-thumb {
     -webkit-appearance: none;
     width: 15px;
     height: 15px;
@@ -35,7 +91,7 @@ input[type="range"]::-webkit-slider-thumb {
     cursor: pointer;
 }
 
-input[name="number-input"] {
+input[name='number-input'] {
     width: 60px;
 }
 
@@ -45,7 +101,7 @@ form {
     text-align: center;
 }
 
-datalist {
+#step-list-wrapper {
     width: 100%;
     height: 10px;
     display: flex;
@@ -54,17 +110,15 @@ datalist {
     margin-bottom: 15px;
 }
 
-datalist > option {
-    width: 20%;
+#step-list-wrapper > div {
+    flex: 1;
     text-align: center;
 }
 
-datalist > option:nth-child(-n + 2) {
-    width: 20%;
+#step-list-wrapper > div:first-child {
     text-align: left;
 }
 
-datalist > option:nth-child(n + 4) {
-    width: 20%;
+#step-list-wrapper > div:last-child {
     text-align: right;
 }
