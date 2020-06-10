@@ -1,0 +1,22 @@
+body {
+    font-family: sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+input[name="range-input"] {
+    width: 350px;
+    margin: 20px 0;
+}
+
+input[name="number-input"] {
+    width: 60px;
+}
+
+form {
+    margin: 20px 0;
+    width: 350px;
+    text-align: center;
+}
