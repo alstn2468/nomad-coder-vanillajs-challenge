@@ -103,8 +103,8 @@ body {
 }
 
 .result-number {
-    padding: 5px 20px 0px 20px;
-    font-size: 50px;
+    padding: 5px 20px;
+    font-size: 46px;
     text-align: right;
     font-weight: 300;
     line-height: normal;
@@ -113,7 +113,7 @@ body {
 .calculate-pad-wrapper {
     display: flex;
     flex: 1;
-    height: 363px;
+    height: 364px;
     flex-direction: column;
 }
 
