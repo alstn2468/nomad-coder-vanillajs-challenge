@@ -1,3 +1,7 @@
+*:focus {
+    outline: none;
+}
+
 html,
 body {
     font-family: sans-serif;
@@ -21,12 +25,36 @@ body {
     background-color: #3F4143;
 }
 
+.dark-gray:hover {
+    background-color: #333436;
+}
+
+.dark-gray:active {
+    background-color: #333436;
+}
+
 .dark-liver {
     background-color: #97999C;
 }
 
+.dark-liver:hover {
+    background-color: #8a8c90;
+}
+
+.dark-liver:active {
+    background-color: #8a8c90;
+}
+
 .vivid-gamboge {
     background-color: #ff9500;
+}
+
+.vivid-gamboge:hover {
+    background-color: #e68600;
+}
+
+.vivid-gamboge:active {
+    background-color: #e68600;
 }
 
 .sunset-orange {
