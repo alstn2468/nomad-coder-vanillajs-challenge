@@ -1,0 +1,106 @@
+html,
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.btn {
+    cursor: pointer;
+}
+body {
+    color: #ffffff;
+}
+
+.js-clock {
+    font-size: 100px;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    margin-top: -100px;
+}
+
+.js-weather {
+    font-size: 26px;
+    margin: 10px;
+}
+
+.js-greetings {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+form {
+    width: 40%;
+    text-align: center;
+}
+
+input[type='text'] {
+    width: 60%;
+    transition: all 0.5s ease;
+    height: 40px;
+    padding: 4px 10px;
+    margin: 10px 0;
+    font-size: 18px;
+    border: 1px solid #ffffff;
+    background: transparent;
+    color: #ffffff;
+}
+
+input[type='text']:focus {
+    border: 3px solid #ffffff;
+    outline: none;
+}
+
+input[type='text']::placeholder {
+    color: #ffffff;
+}
+
+.clicked {
+    color: #7f8c8d;
+}
+
+.form,
+.greetings {
+    display: none;
+}
+
+.showing {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.bgImage {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    animation: fadeIn 0.5s linear;
+}
+
+li > button {
+    background-color: transparent;
+    border: none;
+    font-size: 20px;
+}
+
+li > span {
+    font-size: 22px;
+}
