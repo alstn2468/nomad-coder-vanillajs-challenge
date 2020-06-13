@@ -1,0 +1,19 @@
+{
+    "name": "empty-blueprint",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.html",
+    "scripts": {
+        "start": "parcel index.html --open",
+        "predeploy": "npm run build",
+        "deploy": "gh-pages -d build"
+    },
+    "dependencies": {},
+    "devDependencies": {
+        "@babel/core": "7.2.0",
+        "parcel-bundler": "^1.6.1",
+        "gh-pages": "^2.2.0"
+    },
+    "keywords": [],
+    "homepage": "http://alstn2468.github.io/Nomad_Coder_VanillaJS_Challenge"
+}
